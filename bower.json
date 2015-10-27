@@ -1,0 +1,26 @@
+{
+  "name": "base",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "IBM-Design-Colors": "ibm-colors#~1.4.0",
+    "ap-styles": "*",
+    "breakpoint": "~4.6.4",
+    "chai": "~3.2.0",
+    "mocha": "~2.3.0",
+    "reset-css": "~2.0.2011012602",
+    "susy": "~2.2.6"
+  }
+}

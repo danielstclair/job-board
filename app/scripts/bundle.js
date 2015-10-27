@@ -1,0 +1,1 @@
+var greetings = require('main.js');
