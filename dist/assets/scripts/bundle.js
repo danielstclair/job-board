@@ -10,4 +10,4 @@ module.exports = {
 },{}]},{},[1])
 
 
-//# sourceMappingURL=dist/assets/scripts/maps/bundle.js.map
+//# sourceMappingURL=maps/bundle.js.map

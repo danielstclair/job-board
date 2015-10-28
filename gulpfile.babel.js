@@ -66,7 +66,7 @@ PATHS.dist_scripts = path.join(PATHS.dist_assets, 'scripts');
 PATHS.dist_fonts = path.join(PATHS.dist_assets, 'fonts');
 
 gulp.task('styles', () => {
-    return gulp.src( PATHS.app_assets )
+    return gulp.src( path.join(PATHS.app_styles, '**/*.scss') )
         .pipe($.plumber())
         .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
@@ -77,7 +77,7 @@ gulp.task('styles', () => {
         .pipe($.autoprefixer({
             browsers: ['last 1 version']
         }))
-        .pipe($.sourcemaps.write(path.join(PATHS.dist_styles, 'maps')))
+        .pipe($.sourcemaps.write('maps'))
         .pipe(gulp.dest( PATHS.dist_styles ))
         .pipe(reload({
             stream: true
@@ -107,7 +107,7 @@ function bundle() {
     // optional, remove if you dont want sourcemaps
     .pipe($.sourcemaps.init({loadMaps: true})) // loads map from browserify file
     // Add transformation tasks to the pipeline here.
-    .pipe($.sourcemaps.write(path.join(PATHS.dist_scripts, 'maps'))) // writes .map file
+    .pipe($.sourcemaps.write('maps')) // writes .map file
     .pipe(gulp.dest(PATHS.dist_scripts));
 }
 
@@ -140,7 +140,7 @@ gulp.task('watch', function (){
         'app/images/**/*'
     ]).on('change', reload);
     gulp.watch(path.join(PATHS.app_html, '*.html'), ['fileinclude'])
-    gulp.watch([path.join(PATHS.app_styles, '**/*.scss') ], ['sass']);
+    gulp.watch([path.join(PATHS.app_styles, '**/*.scss') ], ['styles']);
     gulp.watch([path.join(PATHS.app_scripts, '**/*.js')], ['js-bundle']);
 });
 
