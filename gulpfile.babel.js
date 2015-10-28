@@ -26,7 +26,7 @@ const reload = browserSync.reload;
 
 /* FILE DESTINATIONS (RELATIVE TO ASSSETS FOLDER) */
 var PATHS = {
-    root: '.',
+    root: '/',
     app: 'app',
     app_html: '',
     app_assets: '',
@@ -46,8 +46,8 @@ var PATHS = {
    
 };
 
-PATHS.app = path.join(PATHS.root, 'app');
-PATHS.dist = path.join(PATHS.root, 'dist');
+// PATHS.app = path.join(PATHS.root, 'app');
+// PATHS.dist = path.join(PATHS.root, 'dist');
 
 PATHS.app_html = path.join(PATHS.app);
 PATHS.app_assets = path.join(PATHS.app, 'assets');
@@ -86,7 +86,7 @@ gulp.task('styles', () => {
 
 // add custom browserify options here
 var customOpts = {
-    entries: [path.join( PATHS.app_scripts, 'main.js')],
+    entries: [path.join( PATHS.app_scripts, 'main.js' )],
     debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
@@ -101,7 +101,7 @@ function bundle() {
     return b.bundle()
     // log errors if they happen
     .on('error', $.gutil.log.bind($.gutil, 'Browserify Error'))
-    .pipe(source(path.join(PATHS.app_scripts, 'bundle.js')))
+    .pipe(source('bundle.js'))
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
     // optional, remove if you dont want sourcemaps
@@ -117,7 +117,7 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: PATHS.app_htmlTemplates
     }))
-    .pipe(gulp.dest(PATHS.dist));
+    .pipe(gulp.dest(PATHS.dist_html));
 });
 
 /* BROWSER SYNC */
