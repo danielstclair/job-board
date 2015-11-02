@@ -94,13 +94,20 @@ var b = watchify(browserify(opts).transform(babelify));
 
 gulp.task('js-bundle', bundle); // so you can run `gulp js` to build the file
 b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', $.gutil.log); // output build logs to terminal
+// b.on('log', $.gutil.log); // output build logs to terminal
+b.on('log', function(message){
+    $.gutil.log($.gutil.colors.green('Browserify'), message);
+});
 
 
 function bundle() {
     return b.bundle()
     // log errors if they happen
-    .on('error', $.gutil.log.bind($.gutil, 'Browserify Error'))
+    // .on('error', $.gutil.log.bind($.gutil, 'Browserify Error'))
+    .on('error', function(err){
+        $.gutil.log($.gutil.colors.red('Browserify'), err.toString());
+        $.gutil.beep();
+    })
     .pipe(source('bundle.js'))
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
@@ -127,7 +134,8 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: 'dist',
             routes: {
-                '/bower_components': 'bower_components'
+                '/bower_components': 'bower_components',
+                '/node_modules' : 'node_modules'
             }
         }
     });
@@ -137,7 +145,9 @@ gulp.task('browser-sync', function() {
 /* GULP TASKS */
 gulp.task('watch', function (){
     gulp.watch([
-        'app/images/**/*'
+        'app/images/**/*',
+        'app/*.html',
+        'dist/assets/scripts/bundle.js'
     ]).on('change', reload);
     gulp.watch(path.join(PATHS.app_html, '*.html'), ['fileinclude'])
     gulp.watch([path.join(PATHS.app_styles, '**/*.scss') ], ['styles']);

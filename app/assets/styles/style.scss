@@ -1,3 +1,17 @@
-h1 {
-	color: hotpink;
+header{
+  clear: both;
+  img{
+    width: 2em;
+  }
+  h1{
+    display: inline-block;
+    margin-left: 1em;
+  }
+  nav{
+    // display: inline-block;
+    float: right;
+  }
+}
+#app{
+  // width: 2em;
 }

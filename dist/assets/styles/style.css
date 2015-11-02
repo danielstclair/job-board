@@ -1,5 +1,18 @@
-h1 {
-  color: hotpink;
+header {
+  clear: both;
+}
+
+header img {
+  width: 2em;
+}
+
+header h1 {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+header nav {
+  float: right;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
