@@ -48,6 +48,8 @@
     "wiredep": "^3.0.0-beta"
   },
   "dependencies": {
+    "backbone": "^1.2.3",
+    "jquery": "^2.1.4",
     "react": "^0.14.1",
     "react-dom": "^0.14.1"
   }

@@ -1,17 +1,26 @@
-header{
-  clear: both;
-  img{
-    width: 2em;
-  }
-  h1{
-    display: inline-block;
-    margin-left: 1em;
-  }
-  nav{
-    // display: inline-block;
-    float: right;
-  }
+*{
+  font-family: 'Helvetica';
+  color: #0a0a0a;
 }
-#app{
-  // width: 2em;
+
+.main-container, .nav{
+  background-color: #fff;
 }
+
+.main-container{
+  margin: 1em 1em 0;
+  padding: 1em;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('../images/bg.png');
+
+}
+
+
+@import 'nav';
+@import 'job-tips';
+@import 'job-form';

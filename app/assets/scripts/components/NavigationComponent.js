@@ -1,14 +1,19 @@
-module.exports  = React.createClass({
+var React = require('react/dist/react');
+
+module.exports = React.createClass({
   render: function(){
     return (
-      <header>
-      <img id="logo" src="assets/images/logo.png"/>
+      <header className="nav">
+        <img id="logo" src="assets/images/logo.png"/>
         <h1>Fresh Jobs</h1>
         <nav>
-          <a href="#">Nav Link 1</a>
-          <a href="#">Nav Link 2</a>
-          <a href="#">Nav Link 3</a>
-          <a href="#">Nav Link 4</a>
+          <ul>
+            <li><a href="#">JOBS</a></li>
+            <li><a href="#">COMPANIES</a></li>
+            <li><a href="#">CITIES</a></li>
+            <li><a href="#">WHY FRESH?</a></li>
+            <li><a href="#">FOR EMPLOYERS</a></li>
+          </ul>
         </nav>
       </header>
     )

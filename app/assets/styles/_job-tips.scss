@@ -1,0 +1,16 @@
+.job-tips{
+  h3{
+    // text-align: center;
+  }
+  ul{
+    border-top: 1px solid black;
+    list-style: none;
+    padding: 0;
+    li{
+      margin: 0 0.5em;
+      .tip-title{
+        font-weight: 800;
+      }
+    }
+  }
+}
