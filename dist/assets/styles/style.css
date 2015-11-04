@@ -76,8 +76,17 @@ html, body {
 
 .job-form input, .job-form textarea {
   width: 100%;
+  outline: none;
   border: 1px solid #AEAEAE;
   border-radius: 2px;
+}
+
+.job-form input:focus, .job-form textarea:focus {
+  border: 2px solid green;
+}
+
+.job-form input {
+  height: 2em;
 }
 
 .job-form textarea {

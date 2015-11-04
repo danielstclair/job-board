@@ -7,16 +7,16 @@ module.exports = React.createClass({
         <h3>Post your job</h3>
         <form>
           <p>Title</p>
-          <input type="text" />
+          <input type="text" id="job-title" />
           <p>Company Name</p>
-          <input type="text" />
+          <input type="text" id="job-company" />
           <p>Location</p>
-          <input type="text" />
+          <input type="text" id="job-location" />
           <p>Description</p>
-          <textarea></textarea>
+          <textarea id="job-description"></textarea>
           <p>Tags</p>
-          <input type="text" />
-          <button>Submit Job</button>
+          <input type="text" id="job-tags" />
+          <button id="submit-job">Submit Job</button>
         </form>
       </section>
     )
