@@ -8,7 +8,6 @@ module.exports = React.createClass({
   render: function(){
     return (
       <section id="add-job-page">
-       <NavComponent />
        <JobPost />
        <JobTips />
       </section>

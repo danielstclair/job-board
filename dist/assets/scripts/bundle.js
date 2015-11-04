@@ -14,7 +14,6 @@ module.exports = React.createClass({
     return React.createElement(
       'section',
       { id: 'add-job-page' },
-      React.createElement(NavComponent, null),
       React.createElement(JobPost, null),
       React.createElement(JobTips, null)
     );
@@ -258,6 +257,7 @@ var React = require('react/dist/react');
 var ReactDOM = require('react-dom/dist/react-dom');
 var Backbone = require('backbone');
 
+var NavComponent = require('./components/NavigationComponent');
 var AddJobPage = require('./components/AddJobPageComponent');
 
 var AppComponent = React.createClass({
@@ -267,6 +267,7 @@ var AppComponent = React.createClass({
     return React.createElement(
       'section',
       { id: 'app-component' },
+      React.createElement(NavComponent, null),
       React.createElement(AddJobPage, null)
     );
   }
@@ -274,7 +275,7 @@ var AppComponent = React.createClass({
 
 ReactDOM.render(React.createElement(AppComponent), document.getElementById('app'));
 
-},{"./components/AddJobPageComponent":1,"backbone":6,"react-dom/dist/react-dom":10,"react/dist/react":11}],6:[function(require,module,exports){
+},{"./components/AddJobPageComponent":1,"./components/NavigationComponent":4,"backbone":6,"react-dom/dist/react-dom":10,"react/dist/react":11}],6:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.2.3
 

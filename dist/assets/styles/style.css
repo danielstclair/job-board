@@ -115,4 +115,23 @@ html, body {
   color: green;
 }
 
+@media screen and (min-width: 720px) {
+  #add-job-page {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+  }
+  .job-form {
+    float: left;
+    width: 50%;
+    margin-right: 0;
+  }
+  .job-tips {
+    float: right;
+    width: 35%;
+    margin-left: 0;
+  }
+}
+
 /*# sourceMappingURL=maps/style.css.map */
